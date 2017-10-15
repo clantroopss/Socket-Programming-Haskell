@@ -1,0 +1,1 @@
+--To compile solution by executing a script
