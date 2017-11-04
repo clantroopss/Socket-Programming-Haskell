@@ -1,0 +1,1 @@
+ghc -o chatroom chatroom.hs
