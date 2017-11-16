@@ -1,1 +1,3 @@
-ghc -o chatroom chatroom.hs
+#!/bin/bash
+
+stack build
