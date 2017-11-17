@@ -48,6 +48,9 @@ join hdl args port clients chatrooms = do
                             clientChanChat <- dupChan chatChan
                             H.insert theChatrooms chatRoomRef (ChatRoom (nbSubscribers+1) chatChan)
                             return clientChanChat
+                        Nothing -> do
+                            emptyChan <- newChan
+                            return emptyChan
                     return (clientChanChat, chatRoomRef, nbCR)
                 Nothing -> do
                     clientChanChat <- newChan
@@ -63,6 +66,9 @@ join hdl args port clients chatrooms = do
                     maybeClient <- H.lookup theClients clientId
                     client      <- case maybeClient of
                         Just client -> return client
+                        Nothing     -> do
+                            htCTRefToChan <- H.new :: IO (HashTable Int (Chan String))
+                            return (Client clientName htCTRefToChan (lastClientId+1))
                     return client
                 Nothing       -> do
                     let joinId = lastClientId+1

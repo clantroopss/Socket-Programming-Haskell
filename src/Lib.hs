@@ -37,7 +37,7 @@ data ChatRooms = ChatRooms { chatRoomFromId     :: HashTable Int ChatRoom
                            }
 
 getWaitBySocket :: Int
-getWaitBySocket = 60000
+getWaitBySocket = 80000
 
 nonBlockingRead :: Handle -> String -> IO String
 nonBlockingRead hdl currentS = do

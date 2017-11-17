@@ -23,7 +23,7 @@ main = do
     sock <- socket AF_INET Stream 0
     setSocketOption sock ReuseAddr 1
     bind sock (SockAddrInet (toEnum $ read port) iNADDR_ANY)
-    let nbThreads = 10
+    let nbThreads = 5
     listen sock (nbThreads*2)
     
     killedChan <- newChan
@@ -80,7 +80,7 @@ loopClient hdl originalSocket port killedChan clients chatrooms joinIds = do
             unless error (loopClient hdl originalSocket port killedChan clients chatrooms joinIds)
         "KILL_SERVICE"    -> do
             writeChan killedChan True
-            threadDelay 100000
+            threadDelay 200000
             killService originalSocket
         _                 -> otherCommand hdl input
 
