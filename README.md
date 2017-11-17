@@ -12,6 +12,8 @@ What things you need to install the software
 Haskell
 
 * stack
+    To install stack run below command in linux bash:
+    wget -qO- https://get.haskellstack.org/ | sh
 * chat-server.cabal
 
 ```
