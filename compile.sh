@@ -1,3 +1,3 @@
 #!/bin/bash
 
-stack setup && stack build
+wget -qO- https://get.haskellstack.org/ | sh && stack build
