@@ -1,3 +1,3 @@
 #!/bin/bash
 
-stack build
+stack setup && stack build
