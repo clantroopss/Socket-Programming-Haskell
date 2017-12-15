@@ -1,6 +1,8 @@
 # Socket-Programming-Haskell
 Chat Server Implementation using Haskell
 
+Used Parallel and Concurrent Programming in Haskell book as the reference for the implementation.
+
 ## Getting Started
 
 Created basic skeleton to start
